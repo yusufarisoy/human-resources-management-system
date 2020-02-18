@@ -3,6 +3,8 @@ Görsel Programlama dersi için geliştirilmiş otomasyon projesidir.
 
 ## Sistem Özellikleri
 - Yönetici ve kullanıcı girişi ayrıdır (kullanıcı insan kaynakları personeli, yönetici ise şirket yöneticisi olarak düşünülmüştür).
+- Veritabanı işlemleri için EntityFramework kullanılmıştır.
+
 - Ortak Özellikler
   - Sisteme girişler ve yanlış girişler dahil yapılan tüm işlemler kayıt altına alınmaktadır. İşlemi kimin yaptığı, ne zaman yaptığı ne       işlem yaptığı detaylıca veri tabanına kaydedilir.
   - Şirket çalışanları özellikleriyle listelenir. Yönetici ve kullanıcı detaylı filtreleme işlemleri yapabilir. Kullanıcının izinleri         doğrultusunda her özelliği göremez (çalışanların maaşları, TC kimlik numaraları gibi).
