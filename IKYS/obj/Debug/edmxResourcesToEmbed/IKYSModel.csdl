@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IKYSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IKYSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACalisans" EntityType="IKYSModel.ACalisan" />
+    <EntitySet Name="Basvurulars" EntityType="IKYSModel.Basvurular" />
+    <EntitySet Name="Calisanlars" EntityType="IKYSModel.Calisanlar" />
+    <EntitySet Name="Dilekcelers" EntityType="IKYSModel.Dilekceler" />
+    <EntitySet Name="Izinlilers" EntityType="IKYSModel.Izinliler" />
+    <EntitySet Name="Kullanicis" EntityType="IKYSModel.Kullanici" />
+    <EntitySet Name="Logs" EntityType="IKYSModel.Log" />
+    <EntitySet Name="sysdiagrams" EntityType="IKYSModel.sysdiagram" />
+    <EntitySet Name="Yoneticis" EntityType="IKYSModel.Yonetici" />
+  </EntityContainer>
+  <EntityType Name="ACalisan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tcNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="maas" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Basvurular">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tarih" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="basAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="basSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="sehir" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="yabanciDil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="egitimDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mezunOkul" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="cv" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Calisanlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="departman" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="sgNo" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="adres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Dilekceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tarih" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="icerik" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Izinliler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="departman" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="sgNo" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="adres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="izinBas" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="izinBit" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="resim" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="maas" Type="Int32" />
+    <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="sgNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="logid" />
+    </Key>
+    <Property Name="logid" Type="Int32" Nullable="false" />
+    <Property Name="kullid" Type="Int32" Nullable="false" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="eylem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="saat" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Yonetici">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

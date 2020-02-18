@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IKYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACalisan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="tcNo" Type="char" MaxLength="11" />
+          <Property Name="maas" Type="int" />
+        </EntityType>
+        <EntityType Name="Basvurular">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="tarih" Type="varchar" MaxLength="15" />
+          <Property Name="basAd" Type="varchar" MaxLength="50" />
+          <Property Name="basSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="telNo" Type="char" MaxLength="11" />
+          <Property Name="sehir" Type="varchar" MaxLength="30" />
+          <Property Name="adres" Type="varchar" MaxLength="500" />
+          <Property Name="yabanciDil" Type="varchar" MaxLength="50" />
+          <Property Name="egitimDurum" Type="varchar" MaxLength="50" />
+          <Property Name="mezunOkul" Type="varchar" MaxLength="100" />
+          <Property Name="cinsiyet" Type="char" MaxLength="1" />
+          <Property Name="cv" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Calisanlar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="departman" Type="varchar" MaxLength="50" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" />
+          <Property Name="telNo" Type="char" MaxLength="11" />
+          <Property Name="sgNo" Type="char" MaxLength="12" />
+          <Property Name="adres" Type="varchar" MaxLength="200" />
+          <Property Name="cinsiyet" Type="char" MaxLength="1" />
+          <Property Name="mail" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Dilekceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="tarih" Type="varchar" MaxLength="15" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" />
+          <Property Name="icerik" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Izinliler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="departman" Type="varchar" MaxLength="50" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" />
+          <Property Name="telNo" Type="char" MaxLength="11" />
+          <Property Name="sgNo" Type="char" MaxLength="12" />
+          <Property Name="adres" Type="varchar" MaxLength="200" />
+          <Property Name="cinsiyet" Type="char" MaxLength="1" />
+          <Property Name="mail" Type="varchar" MaxLength="60" />
+          <Property Name="izinBas" Type="varchar" MaxLength="15" />
+          <Property Name="izinBit" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="sifre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="resim" Type="varchar" MaxLength="255" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" />
+          <Property Name="telNo" Type="char" MaxLength="11" />
+          <Property Name="maas" Type="int" />
+          <Property Name="adres" Type="varchar" MaxLength="500" />
+          <Property Name="sgNo" Type="char" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="logid" />
+          </Key>
+          <Property Name="logid" Type="int" Nullable="false" />
+          <Property Name="kullid" Type="int" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" />
+          <Property Name="eylem" Type="varchar" MaxLength="100" />
+          <Property Name="saat" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Yonetici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="sifre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ad" Type="varchar" MaxLength="50" />
+          <Property Name="soyad" Type="varchar" MaxLength="50" />
+          <Property Name="telNo" Type="char" MaxLength="11" />
+          <Property Name="mail" Type="varchar" MaxLength="50" />
+          <Property Name="adres" Type="varchar" MaxLength="500" />
+          <Property Name="foto" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="IKYSModelStoreContainer">
+          <EntitySet Name="ACalisan" EntityType="Self.ACalisan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basvurular" EntityType="Self.Basvurular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calisanlar" EntityType="Self.Calisanlar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dilekceler" EntityType="Self.Dilekceler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Izinliler" EntityType="Self.Izinliler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yonetici" EntityType="Self.Yonetici" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IKYSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="IKYSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACalisans" EntityType="IKYSModel.ACalisan" />
+          <EntitySet Name="Basvurulars" EntityType="IKYSModel.Basvurular" />
+          <EntitySet Name="Calisanlars" EntityType="IKYSModel.Calisanlar" />
+          <EntitySet Name="Dilekcelers" EntityType="IKYSModel.Dilekceler" />
+          <EntitySet Name="Izinlilers" EntityType="IKYSModel.Izinliler" />
+          <EntitySet Name="Kullanicis" EntityType="IKYSModel.Kullanici" />
+          <EntitySet Name="Logs" EntityType="IKYSModel.Log" />
+          <EntitySet Name="sysdiagrams" EntityType="IKYSModel.sysdiagram" />
+          <EntitySet Name="Yoneticis" EntityType="IKYSModel.Yonetici" />
+        </EntityContainer>
+        <EntityType Name="ACalisan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="tcNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="maas" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Basvurular">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="tarih" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="basAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="basSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="sehir" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="yabanciDil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="egitimDurum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mezunOkul" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cv" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Calisanlar">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="departman" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="sgNo" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Dilekceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="tarih" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="icerik" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Izinliler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="departman" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="sgNo" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cinsiyet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="izinBas" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="izinBit" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="resim" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="maas" Type="Int32" />
+          <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sgNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="logid" />
+          </Key>
+          <Property Name="logid" Type="Int32" Nullable="false" />
+          <Property Name="kullid" Type="Int32" Nullable="false" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="eylem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="saat" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Yonetici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telNo" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="foto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IKYSModelStoreContainer" CdmEntityContainer="IKYSEntities">
+          <EntitySetMapping Name="ACalisans">
+            <EntityTypeMapping TypeName="IKYSModel.ACalisan">
+              <MappingFragment StoreEntitySet="ACalisan">
+                <ScalarProperty Name="maas" ColumnName="maas" />
+                <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Basvurulars">
+            <EntityTypeMapping TypeName="IKYSModel.Basvurular">
+              <MappingFragment StoreEntitySet="Basvurular">
+                <ScalarProperty Name="cv" ColumnName="cv" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="mezunOkul" ColumnName="mezunOkul" />
+                <ScalarProperty Name="egitimDurum" ColumnName="egitimDurum" />
+                <ScalarProperty Name="yabanciDil" ColumnName="yabanciDil" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="telNo" ColumnName="telNo" />
+                <ScalarProperty Name="basSoyad" ColumnName="basSoyad" />
+                <ScalarProperty Name="basAd" ColumnName="basAd" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calisanlars">
+            <EntityTypeMapping TypeName="IKYSModel.Calisanlar">
+              <MappingFragment StoreEntitySet="Calisanlar">
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="sgNo" ColumnName="sgNo" />
+                <ScalarProperty Name="telNo" ColumnName="telNo" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="departman" ColumnName="departman" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dilekcelers">
+            <EntityTypeMapping TypeName="IKYSModel.Dilekceler">
+              <MappingFragment StoreEntitySet="Dilekceler">
+                <ScalarProperty Name="icerik" ColumnName="icerik" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Izinlilers">
+            <EntityTypeMapping TypeName="IKYSModel.Izinliler">
+              <MappingFragment StoreEntitySet="Izinliler">
+                <ScalarProperty Name="izinBit" ColumnName="izinBit" />
+                <ScalarProperty Name="izinBas" ColumnName="izinBas" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="sgNo" ColumnName="sgNo" />
+                <ScalarProperty Name="telNo" ColumnName="telNo" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="departman" ColumnName="departman" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanicis">
+            <EntityTypeMapping TypeName="IKYSModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="sgNo" ColumnName="sgNo" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="maas" ColumnName="maas" />
+                <ScalarProperty Name="telNo" ColumnName="telNo" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="resim" ColumnName="resim" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="IKYSModel.Log">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="saat" ColumnName="saat" />
+                <ScalarProperty Name="eylem" ColumnName="eylem" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="kullid" ColumnName="kullid" />
+                <ScalarProperty Name="logid" ColumnName="logid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="IKYSModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yoneticis">
+            <EntityTypeMapping TypeName="IKYSModel.Yonetici">
+              <MappingFragment StoreEntitySet="Yonetici">
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="telNo" ColumnName="telNo" />
+                <ScalarProperty Name="soyad" ColumnName="soyad" />
+                <ScalarProperty Name="ad" ColumnName="ad" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

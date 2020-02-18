@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="97e04f463100482f89ec939100886953" Name="Diagram1">
+        <EntityTypeShape EntityType="IKYSModel.ACalisan" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IKYSModel.Basvurular" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IKYSModel.Calisanlar" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IKYSModel.Dilekceler" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IKYSModel.Izinliler" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="IKYSModel.Kullanici" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="IKYSModel.Log" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="IKYSModel.sysdiagram" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="IKYSModel.Yonetici" Width="1.5" PointX="4.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

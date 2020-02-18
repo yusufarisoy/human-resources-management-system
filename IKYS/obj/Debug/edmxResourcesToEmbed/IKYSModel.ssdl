@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IKYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACalisan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="tcNo" Type="char" MaxLength="11" />
+    <Property Name="maas" Type="int" />
+  </EntityType>
+  <EntityType Name="Basvurular">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="tarih" Type="varchar" MaxLength="15" />
+    <Property Name="basAd" Type="varchar" MaxLength="50" />
+    <Property Name="basSoyad" Type="varchar" MaxLength="50" />
+    <Property Name="telNo" Type="char" MaxLength="11" />
+    <Property Name="sehir" Type="varchar" MaxLength="30" />
+    <Property Name="adres" Type="varchar" MaxLength="500" />
+    <Property Name="yabanciDil" Type="varchar" MaxLength="50" />
+    <Property Name="egitimDurum" Type="varchar" MaxLength="50" />
+    <Property Name="mezunOkul" Type="varchar" MaxLength="100" />
+    <Property Name="cinsiyet" Type="char" MaxLength="1" />
+    <Property Name="cv" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Calisanlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="departman" Type="varchar" MaxLength="50" />
+    <Property Name="ad" Type="varchar" MaxLength="50" />
+    <Property Name="soyad" Type="varchar" MaxLength="50" />
+    <Property Name="telNo" Type="char" MaxLength="11" />
+    <Property Name="sgNo" Type="char" MaxLength="12" />
+    <Property Name="adres" Type="varchar" MaxLength="200" />
+    <Property Name="cinsiyet" Type="char" MaxLength="1" />
+    <Property Name="mail" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Dilekceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="tarih" Type="varchar" MaxLength="15" />
+    <Property Name="ad" Type="varchar" MaxLength="50" />
+    <Property Name="soyad" Type="varchar" MaxLength="50" />
+    <Property Name="icerik" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Izinliler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="departman" Type="varchar" MaxLength="50" />
+    <Property Name="ad" Type="varchar" MaxLength="50" />
+    <Property Name="soyad" Type="varchar" MaxLength="50" />
+    <Property Name="telNo" Type="char" MaxLength="11" />
+    <Property Name="sgNo" Type="char" MaxLength="12" />
+    <Property Name="adres" Type="varchar" MaxLength="200" />
+    <Property Name="cinsiyet" Type="char" MaxLength="1" />
+    <Property Name="mail" Type="varchar" MaxLength="60" />
+    <Property Name="izinBas" Type="varchar" MaxLength="15" />
+    <Property Name="izinBit" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="sifre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="resim" Type="varchar" MaxLength="255" />
+    <Property Name="ad" Type="varchar" MaxLength="50" />
+    <Property Name="soyad" Type="varchar" MaxLength="50" />
+    <Property Name="telNo" Type="char" MaxLength="11" />
+    <Property Name="maas" Type="int" />
+    <Property Name="adres" Type="varchar" MaxLength="500" />
+    <Property Name="sgNo" Type="char" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="logid" />
+    </Key>
+    <Property Name="logid" Type="int" Nullable="false" />
+    <Property Name="kullid" Type="int" Nullable="false" />
+    <Property Name="ad" Type="varchar" MaxLength="50" />
+    <Property Name="soyad" Type="varchar" MaxLength="50" />
+    <Property Name="eylem" Type="varchar" MaxLength="100" />
+    <Property Name="saat" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Yonetici">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="sifre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ad" Type="varchar" MaxLength="50" />
+    <Property Name="soyad" Type="varchar" MaxLength="50" />
+    <Property Name="telNo" Type="char" MaxLength="11" />
+    <Property Name="mail" Type="varchar" MaxLength="50" />
+    <Property Name="adres" Type="varchar" MaxLength="500" />
+    <Property Name="foto" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="IKYSModelStoreContainer">
+    <EntitySet Name="ACalisan" EntityType="Self.ACalisan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Basvurular" EntityType="Self.Basvurular" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Calisanlar" EntityType="Self.Calisanlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dilekceler" EntityType="Self.Dilekceler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Izinliler" EntityType="Self.Izinliler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yonetici" EntityType="Self.Yonetici" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

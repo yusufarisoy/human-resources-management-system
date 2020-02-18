@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IKYSModelStoreContainer" CdmEntityContainer="IKYSEntities">
+    <EntitySetMapping Name="ACalisans">
+      <EntityTypeMapping TypeName="IKYSModel.ACalisan">
+        <MappingFragment StoreEntitySet="ACalisan">
+          <ScalarProperty Name="maas" ColumnName="maas" />
+          <ScalarProperty Name="tcNo" ColumnName="tcNo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Basvurulars">
+      <EntityTypeMapping TypeName="IKYSModel.Basvurular">
+        <MappingFragment StoreEntitySet="Basvurular">
+          <ScalarProperty Name="cv" ColumnName="cv" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="mezunOkul" ColumnName="mezunOkul" />
+          <ScalarProperty Name="egitimDurum" ColumnName="egitimDurum" />
+          <ScalarProperty Name="yabanciDil" ColumnName="yabanciDil" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="telNo" ColumnName="telNo" />
+          <ScalarProperty Name="basSoyad" ColumnName="basSoyad" />
+          <ScalarProperty Name="basAd" ColumnName="basAd" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calisanlars">
+      <EntityTypeMapping TypeName="IKYSModel.Calisanlar">
+        <MappingFragment StoreEntitySet="Calisanlar">
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="sgNo" ColumnName="sgNo" />
+          <ScalarProperty Name="telNo" ColumnName="telNo" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="departman" ColumnName="departman" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dilekcelers">
+      <EntityTypeMapping TypeName="IKYSModel.Dilekceler">
+        <MappingFragment StoreEntitySet="Dilekceler">
+          <ScalarProperty Name="icerik" ColumnName="icerik" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Izinlilers">
+      <EntityTypeMapping TypeName="IKYSModel.Izinliler">
+        <MappingFragment StoreEntitySet="Izinliler">
+          <ScalarProperty Name="izinBit" ColumnName="izinBit" />
+          <ScalarProperty Name="izinBas" ColumnName="izinBas" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="sgNo" ColumnName="sgNo" />
+          <ScalarProperty Name="telNo" ColumnName="telNo" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="departman" ColumnName="departman" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicis">
+      <EntityTypeMapping TypeName="IKYSModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="sgNo" ColumnName="sgNo" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="maas" ColumnName="maas" />
+          <ScalarProperty Name="telNo" ColumnName="telNo" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="IKYSModel.Log">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="saat" ColumnName="saat" />
+          <ScalarProperty Name="eylem" ColumnName="eylem" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="kullid" ColumnName="kullid" />
+          <ScalarProperty Name="logid" ColumnName="logid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IKYSModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yoneticis">
+      <EntityTypeMapping TypeName="IKYSModel.Yonetici">
+        <MappingFragment StoreEntitySet="Yonetici">
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="telNo" ColumnName="telNo" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
